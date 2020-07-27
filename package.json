@@ -1,8 +1,8 @@
 {
-  "name": "projectize",
+  "name": "DSMAP-demo",
   "version": "0.3.0",
   "private": true,
-  "homepage": "https://levirve.github.io/projectize",
+  "homepage": "https://acht7111020.github.io/DSMAP-demo",
   "dependencies": {
     "@babel/runtime": "^7.10.4",
     "@material-ui/core": "^4.11.0",
