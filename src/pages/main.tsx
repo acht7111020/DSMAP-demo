@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(4),
     fontFamily: 'Source Serif Pro',
-    '& > *': {
+    '& > a > *': {
       margin: theme.spacing(0.5),
     },
   },
@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[200],
     marginTop: theme.spacing(2),
     padding: theme.spacing(1, 4),
+  },
+  iconText: {
+    wordWrap: 'break-word',
   },
 }));
 
@@ -81,7 +84,10 @@ export default function MainPage(): React.ReactElement {
 
 function HeadingTeaser(): React.ReactElement {
   const classes = useStyles();
-  const topicLabels = ['ECCV 2020', 'Style Transfer'];
+  const topicLabels = [
+    { text: 'ECCV 2020', url: 'https://eccv2020.eu/' },
+    { text: 'Style Transfer', url: 'https://eccv2020.eu/' },
+  ];
   const imageUrl = `${process.env.PUBLIC_URL}/images/teaser.png`;
 
   return (
@@ -95,7 +101,14 @@ function HeadingTeaser(): React.ReactElement {
         Domain-Specific Mappings <br />
         for Generative Adversarial Style Transfers <br />
         {topicLabels.map((label) => (
-          <Chip key={label} label={label} />
+          <Link
+            key={label.text}
+            href={label.url}
+            target="_blank"
+            rel="noopener"
+          >
+            <Chip label={label.text} />
+          </Link>
         ))}
       </Typography>
       <AuthorSection />
@@ -177,11 +190,7 @@ function PaperSection(): React.ReactElement {
       <Chip label="Arxiv" variant="outlined" color="primary" />
       <Grid item>
         <Link href={arxivLink} target="_blank" rel="noopener">
-          <Banner
-            metadata={{ title: thumbTitle }}
-            elevation={0}
-            imageSrc={thumbImageUrl}
-          />
+          <Banner title={thumbTitle} elevation={0} imageSrc={thumbImageUrl} />
         </Link>
       </Grid>
       <Title anchor="citation" name="Citation" />
@@ -201,6 +210,7 @@ function PaperSection(): React.ReactElement {
 }
 
 function DownloadSection(): React.ReactElement {
+  const classes = useStyles();
   const youtubeLink = '';
   const githubProjectLink = 'https://github.com/acht7111020/DSMAP';
   const supplementaryLink =
@@ -221,16 +231,21 @@ function DownloadSection(): React.ReactElement {
   return (
     <>
       <Title anchor="download" name="Download" />
-      <Grid container justify="center" spacing={6}>
+      <Grid container justify="center" spacing={1}>
         {iconLinksContent.map((iconLink) => (
-          <Grid item>
+          <Grid item xs={2} key={iconLink.url}>
             <Link href={iconLink.url} target="_blank" rel="noopener">
               <Icon
                 component={iconLink.icon}
                 color="action"
                 style={{ fontSize: 60 }}
               />
-              <Typography align="center" variant="h6" color="inherit">
+              <Typography
+                align="center"
+                variant="h6"
+                color="inherit"
+                className={classes.iconText}
+              >
                 {iconLink.name}
               </Typography>
             </Link>
