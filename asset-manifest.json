@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/DSMAP-demo/static/js/main.a104ddbc.chunk.js",
-    "main.js.map": "/DSMAP-demo/static/js/main.a104ddbc.chunk.js.map",
+    "main.js": "/DSMAP-demo/static/js/main.566581e1.chunk.js",
+    "main.js.map": "/DSMAP-demo/static/js/main.566581e1.chunk.js.map",
     "runtime-main.js": "/DSMAP-demo/static/js/runtime-main.e0f10ae9.js",
     "runtime-main.js.map": "/DSMAP-demo/static/js/runtime-main.e0f10ae9.js.map",
-    "static/js/2.96a72730.chunk.js": "/DSMAP-demo/static/js/2.96a72730.chunk.js",
-    "static/js/2.96a72730.chunk.js.map": "/DSMAP-demo/static/js/2.96a72730.chunk.js.map",
+    "static/js/2.8ef3c8d2.chunk.js": "/DSMAP-demo/static/js/2.8ef3c8d2.chunk.js",
+    "static/js/2.8ef3c8d2.chunk.js.map": "/DSMAP-demo/static/js/2.8ef3c8d2.chunk.js.map",
     "index.html": "/DSMAP-demo/index.html",
-    "precache-manifest.463557a8bc050f220d91e8da8b5bab2f.js": "/DSMAP-demo/precache-manifest.463557a8bc050f220d91e8da8b5bab2f.js",
+    "precache-manifest.972cbf94f82248e5fd0362f8931a8615.js": "/DSMAP-demo/precache-manifest.972cbf94f82248e5fd0362f8931a8615.js",
     "service-worker.js": "/DSMAP-demo/service-worker.js",
-    "static/js/2.96a72730.chunk.js.LICENSE.txt": "/DSMAP-demo/static/js/2.96a72730.chunk.js.LICENSE.txt"
+    "static/js/2.8ef3c8d2.chunk.js.LICENSE.txt": "/DSMAP-demo/static/js/2.8ef3c8d2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e0f10ae9.js",
-    "static/js/2.96a72730.chunk.js",
-    "static/js/main.a104ddbc.chunk.js"
+    "static/js/2.8ef3c8d2.chunk.js",
+    "static/js/main.566581e1.chunk.js"
   ]
 }
