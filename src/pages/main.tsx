@@ -17,6 +17,7 @@ import {
 } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link as ReactLink } from 'react-router-dom';
+import ReactPlayer from 'react-player/youtube';
 
 import Header from '../components/Headers';
 import Title from '../components/Title';
@@ -173,8 +174,8 @@ function PaperSection(): React.ReactElement {
   const classes = useStyles();
   const thumbImageUrl = `${process.env.PUBLIC_URL}/images/thumb.png`;
   const thumbTitle = `Domain-specific Mappings for Generative Adversarial Style Transfers, ECCV 2020 (arxiv)`;
-  const arxivLink = '';
-  const descriptionText = `Hsin-Yu Chang, Zhixiang Wang, and Yung-Yu Chuang, "Domain-Specific
+  const arxivLink = 'https://arxiv.org/abs/2008.02198';
+  const descriptionText = `Hsin-Yu Chang, Zhixiang, Wang, and Yung-Yu Chuang, "Domain-Specific
   Mappings for Generative Adversarial Style Transfers", in Proceedings
   of the European Conference on Computer Vision (ECCV), 2020`;
   const bibtex = `@inproceedings{chang2020dsmap,
@@ -187,7 +188,9 @@ function PaperSection(): React.ReactElement {
   return (
     <>
       <Title anchor="paper" name="Paper" />
-      <Chip label="Arxiv" variant="outlined" color="primary" />
+      <Link href={arxivLink} target="_blank" rel="noopener">
+        <Chip label="Arxiv" variant="outlined" color="primary" />
+      </Link>
       <Grid item>
         <Link href={arxivLink} target="_blank" rel="noopener">
           <Banner title={thumbTitle} elevation={0} imageSrc={thumbImageUrl} />
@@ -211,7 +214,7 @@ function PaperSection(): React.ReactElement {
 
 function DownloadSection(): React.ReactElement {
   const classes = useStyles();
-  const youtubeLink = '';
+  const youtubeLink = 'https://www.youtube.com/watch?v=WH8lpouVx40';
   const githubProjectLink = 'https://github.com/acht7111020/DSMAP';
   const supplementaryLink =
     'https://www.dropbox.com/s/9wt2753hjgzf3rv/ECCV_supp_domain_specific_mapping_style_transfer.pdf?dl=0';
@@ -222,7 +225,7 @@ function DownloadSection(): React.ReactElement {
 
   const iconLinksContent = [
     { name: 'Code', url: githubProjectLink, icon: GitHubIcon },
-    { name: 'Video', url: youtubeLink, icon: YouTubeIcon },
+    // { name: 'Video', url: youtubeLink, icon: YouTubeIcon },
     { name: 'Supplementary', url: supplementaryLink, icon: PictureAsPdfIcon },
     { name: 'Demo Results', url: demoZipLink, icon: StorageIcon },
     { name: 'More Results', url: resultZipLink, icon: StorageIcon },
@@ -230,10 +233,14 @@ function DownloadSection(): React.ReactElement {
 
   return (
     <>
+      <Title anchor="video" name="Summary Video" />
+      <Grid container justify="center">
+        <ReactPlayer url={youtubeLink} controls="true" />
+      </Grid>
       <Title anchor="download" name="Download" />
       <Grid container justify="center" spacing={1}>
         {iconLinksContent.map((iconLink) => (
-          <Grid item xs={2} key={iconLink.url}>
+          <Grid item xs={3} key={iconLink.url}>
             <Link href={iconLink.url} target="_blank" rel="noopener">
               <Icon
                 component={iconLink.icon}

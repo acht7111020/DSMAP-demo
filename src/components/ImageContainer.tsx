@@ -28,7 +28,7 @@ export default function ImageContainer(
           }}
           imageStyle={{
             display: 'block',
-            height: 'auto',
+            height: '235px',
             width: 'auto',
             left: 'auto',
             margin: 'auto',

@@ -20,6 +20,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-github-corner": "^2.3.0",
+    "react-player": "^2.6.0",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.0.0",
     "react-scripts": "^3.4.1",
@@ -29,6 +30,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "clean": "gh-pages-clean",
     "start": "react-scripts start",
     "build": "react-scripts build && node copyIndexTo404.js",
     "test": "react-scripts test",
