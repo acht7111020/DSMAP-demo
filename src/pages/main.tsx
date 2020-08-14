@@ -17,7 +17,6 @@ import {
 } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link as ReactLink } from 'react-router-dom';
-import ReactPlayer from 'react-player/youtube';
 
 import Header from '../components/Headers';
 import Title from '../components/Title';
@@ -235,7 +234,15 @@ function DownloadSection(): React.ReactElement {
     <>
       <Title anchor="video" name="Summary Video" />
       <Grid container justify="center">
-        <ReactPlayer url={youtubeLink} controls="true" />
+        <iframe
+          title="ytVideo"
+          width="660"
+          height="415"
+          src="https://www.youtube.com/embed/WH8lpouVx40"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
       </Grid>
       <Title anchor="download" name="Download" />
       <Grid container justify="center" spacing={1}>
